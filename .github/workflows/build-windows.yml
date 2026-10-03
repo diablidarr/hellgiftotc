@@ -47,6 +47,9 @@ jobs:
 
       - name: Configure & build (preset windows-release)
         uses: lukka/run-cmake@v10
+        env:
+          VCPKG_BINARY_SOURCES: "clear;x-gha,readwrite"
+          VCPKG_MAX_CONCURRENCY: "2"
         with:
           cmakeListsTxtPath: ${{ github.workspace }}/hellgiftotc/CMakeLists.txt
           configurePreset: windows-release
