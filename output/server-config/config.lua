@@ -1,10 +1,4 @@
 -- Crystal Server Configuration
--- ============================================================================
--- Przygotowane pod: hellgift.online (CrystalServer 15.25)
--- Zmienione: ip, serverName, coinImagesURL, url  ->  hellgift.online
--- DO UZUPEŁNIENIA PRZEZ ADMINA: mysqlHost / mysqlUser / mysqlPass / mysqlDatabase
---   (patrz sekcja "MySQL" niżej). Domyślne porty 7171/7172 pozostawione bez zmian.
--- ============================================================================
 
 -- Core settings
 -- If you want to use the global datapack folder, put "data-global"
@@ -94,7 +88,7 @@ loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 97172
 maxPlayers = 0
-serverName = "hellgift.online"
+serverName = "Crystal"
 serverMotd = "Welcome to the Crystal Server!"
 statusTimeout = 5 * 1000
 replaceKickOnLogin = true
@@ -103,12 +97,6 @@ maxPlayersOnlinePerAccount = 1
 maxPlayersOutsidePZPerAccount = 1
 toggleMaxConnectionsByIP = false
 maxIPConnections = 3
-
--- Player Concurrency Lock
--- NOTE: togglePlayerLock blocks character logins during web transactions (marketplace, admin changes, character bazaar)
--- NOTE: playerLockTimeout defines the lock expiry in seconds to prevent deadlock if a web request fails
-togglePlayerLock = true
-playerLockTimeout = 60
 
 -- Packet Compression
 -- Minimize network bandwith and reduce ping
@@ -383,7 +371,7 @@ teleportSummons = false
 -- NOTE: true will allow the /reload command to be used
 -- NOTE: Using this script might cause unwanted changes
 -- This script forces a reload in the entire server, this means that everything that is stored in memory might stop to work properly and/or completely, this script should be used in test environments only
-allowReload = false
+allowReload = true
 
 -- Max players allowed on a dummy.
 maxAllowedOnADummy = 1
@@ -498,30 +486,14 @@ marketRefreshPricesInterval = 30
 premiumToCreateMarketOffer = true
 checkExpiredMarketOffersEachMinutes = 60
 maxMarketOffersAtATimePerPlayer = 100
-toggleWebMarketOrders = true
-webMarketOrdersInterval = 2000
-
--- Character Bazaar
--- NOTE: charBazaarFee is the cost in transferable coins to create an auction
--- NOTE: charBazaarTaxPercent is the commission percentage kept from a sale
--- NOTE: charBazaarVaultAccount is the account an auctioned character is moved to
--- NOTE: charBazaarMinDays / charBazaarMaxDays define the allowed auction duration range
-charBazaarEnabled = true
-charBazaarFee = 50
-charBazaarTaxPercent = 12
-charBazaarVaultAccount = 1
-charBazaarMinLevel = 8
-charBazaarShowcaseSlots = 4
-charBazaarMinDays = 1
-charBazaarMaxDays = 28
 
 -- MySQL
 -- NOTE: mysqlPoolSize 4 (default) — small to medium servers
 -- 8–16 — high-traffic servers with heavy market usage
 -- 1 — equivalent to the old single-connection behavior
 mysqlHost = "127.0.0.1"
-mysqlUser = "root"
-mysqlPass = "root"
+mysqlUser = "diablidar"
+mysqlPass = "gejsza11"
 mysqlDatabase = "crystalserver"
 mysqlPort = 3306
 mysqlSock = ""
@@ -710,7 +682,7 @@ startupDatabaseOptimization = true
 -- Status server information
 ownerName = "Tryller"
 ownerEmail = "@gmail.com"
-url = "http://hellgift.online/"
+url = "https://github.com/zimbadev/crystalserver"
 
 -- Sends Discord webhook notifications on startup, raids and shutdown.
 -- The URL layout is https://discord.com/api/webhooks/:id/:token
