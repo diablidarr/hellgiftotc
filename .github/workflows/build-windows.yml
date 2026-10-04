@@ -21,7 +21,7 @@ defaults:
 jobs:
   build:
     name: Compile Windows x64 (CMake Release)
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
       - name: Checkout
         uses: actions/checkout@v4
