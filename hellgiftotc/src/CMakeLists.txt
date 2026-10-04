@@ -522,7 +522,7 @@ if(MSVC)
 		LibLZMA::LibLZMA
 		winmm.lib
 		pugixml::pugixml
-		fmt::fmt-header-only
+		fmt::fmt
 	)
 elseif(ANDROID)
 	target_include_directories(${PROJECT_NAME}
