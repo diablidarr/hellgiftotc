@@ -454,11 +454,11 @@ if(MSVC)
 	# Set variables to have Windows Vista Value so httplib will build 'inet_pton'
 	target_compile_definitions(${PROJECT_NAME}
 		PRIVATE
-		NTDDI_VERSION=0x06000000
-		_WIN32_WINNT=0x0600
+		NTDDI_VERSION=0x0A000000
+		_WIN32_WINNT=0x0A00
 	)
 
-	target_compile_options(${PROJECT_NAME} PUBLIC /MP /FS /Zf /EHsc )
+	target_compile_options(${PROJECT_NAME} PUBLIC /MP /FS /Zf /EHsc /bigobj )
 
 	if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 		string(REPLACE "/Zi" "/Z7" CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
